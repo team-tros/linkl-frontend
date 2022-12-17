@@ -1,0 +1,54 @@
+<head lang="ko">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="간편하고도 빠른 링크 단축 서비스">
+    <meta property="og:title" content="링클 | 간편한 링크 단축 서비스">
+    <meta property="og:description" content="고성능을 지향하는 링크단축 서비스">
+    <title>링클 - 정말로 심플한 링크 단축 서비스</title>
+    <meta name="color-scheme" content="dark light" />
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="icon" href="./assets/images/favicon.ico">
+</head>
+<body>
+    <div class="description">
+        <h1 class="title ignore soo">간편하고도 빠른<br>링크 단축 서비스</h1>
+        <p class="urltext ignore soo">단축할 링크 원본</p>
+    </div>
+    {% if result == True %}
+        {% if error == True %}
+            {% if error_code == 1 %}
+                <p class='shortenlink ignore' style='color:#fe5151;'>단축할 링크가 필요해요!</p><p class='shorten ignore'>단축할 링크가 비어있으면 안되요!</p>
+            {% elif error_code == 2 %}
+                <p class='shortenlink ignore' style='color:#fe5151;'>단축할 링크가 올바르지 않아요!</p><p class='shorten ignore'>단축할 링크는 https://나 http://와 같은 올바른 프로토콜이 필요해요.</p>
+            {% elif error_code == 3 %}
+                <p class='shortenlink ignore' style='color:#fe5151;'>선택사항으로 지정한 링크가 올바르지 않아요!</p><p class='shorten ignore'>지정한 링크는 특수문자가 들어가면 안되요!</p>
+            {% elif error_code == 4 %}
+                <p class='shortenlink ignore' style='color:#fe5151;'>선택사항으로 지정한 링크가 이미 지정되어 있어요!</p><p class='shorten ignore'>다른 링크를 지정해주세요.</p>
+            {% endif %}
+        {% endif %}
+        {% if error == False %}
+            <p class='shortenlink ignore'>링크 단축 성공!</p><a class='shorten ignore' href="https://linkl.kr/{{message['link']}}">https://linkl.kr/{{message['link']}}로 단축되었어요!</a>
+        {% endif %}
+    {% endif %}
+    <form method="POST" action="http://127.0.0.1:9000/">
+        <div>
+            <div>
+                <input type="url" id="input" value="https://" name="redirect_link" class="input" placeholder="단축하려는 링크를 입력해주세요.">
+            </div>
+            <div>
+                <p class="linkl ignore">linkl.kr/</p>
+                <svg class="arrow ignore" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="arrow" d="M1 1L6 6L1 11" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input type="text" id="custom" name="link" class="inputsmall" placeholder="원하는 링크 이름(선택)">
+            </div>
+        </div>
+        <input type="submit" class="submit" id="shortenButton" value="링크 줄이기">
+    </form>
+    <div class="infodiv">
+        <img src="{{ url_for('static', filename='asset/warn.svg') }}" class="ignore icon">
+        <p class="bold ignore warning">링클은 이 사이트를 사용해 단축하는 링크에 대해 그 어떤 책임도 지지 않습니다.</p>
+        <p class="ignore paragraph m-2">국제법으로 위반되는 사이트가 아닌 이상 그 어떤 사이트도 검열하지 않습니다.</p>
+    </div>
+</body>

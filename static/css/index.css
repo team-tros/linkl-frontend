@@ -1,0 +1,512 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+    margin: 0em;
+    padding: 0em;
+    max-height: 100%;
+    width: auto;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+
+.ignore {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.bold {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.input::placeholder {
+    color:#cdcdcd
+}
+
+
+body {
+    background-color: #101820;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.m-05 {
+    margin-top : 0.5vh;
+}
+
+.m-1 {
+    margin-top : 1vh;
+}
+
+.m-2 {
+    margin-top : 2vh;
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        position:absolute;
+    }
+
+    .paragraph {
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        color: #333333;
+    }
+
+    .shorten {
+        position: absolute;
+        font-size: 4vw;
+        font-weight: 400;
+        color: #333333;
+        margin-top: 5vh;
+        top: 7.5vw;
+        margin-left: 25vw;
+        z-index: 5;
+    }
+
+    .shortenlink {
+        position: absolute;
+        font-size: 5vw;
+        font-weight: 700;
+        color: #297DFC;
+        margin-top: 5vh;
+        top: 1.5vw;
+        margin-left: 25vw;
+        z-index: 5;
+    }
+
+    .p-small {
+        font-size: 0.625rem;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .rightdiv {
+        position: absolute;
+        width:10vw;
+        height:50px;
+        margin-left:100vw;
+        top:0;
+    }
+
+    .logo {
+        position:relative;
+        margin-left: 7.5vw;
+        margin-top: 5vh;
+        width: 15vw;
+        height: 15vw;
+        cursor : pointer;
+    }
+
+    h1 {
+        position: absolute;
+        font-weight: 700;
+        font-size:  3em;
+        letter-spacing: -0.02em;
+
+        color: #333333;
+    }
+
+    .input {
+        position: absolute;
+        background: #FFFFFF;
+        color: #333333;
+        border-radius: 1.25em;
+        border: 0em;
+        text-indent: 1em;
+        font-weight: 400;
+        width: 85vw;
+        margin-inline: 7.5vw;
+        height: 4rem;
+        margin-top: 2vh;
+        font-size: 1.5em;
+    }
+
+    .warning {
+        color: #333333;
+        position: relative; margin-left:1.75rem; margin-top: -1.5rem;
+    }
+
+    .title {
+        position: relative;
+        margin-inline: 7.5vw;
+        margin-top: 10vh;
+        font-size: 7.5vw;
+    }
+
+    .inputsmall {
+        position: absolute;
+        width: 85vw;
+        height: 3rem;
+        margin-top: 5.75rem;
+        margin-inline: 7.5vw;
+        font-size: 1.25em;
+        text-indent: 109px;
+        text-align: left;
+        background: #FFFFFF;
+        border-radius: 1.25em;
+        font-weight: 400;
+        border: 0px;
+        color: #333333;
+    }
+    .inputsmall::placeholder {
+        text-indent: 109px;
+        text-align: left;
+        font-weight: 400;
+        color:#cdcdcd
+    }
+
+    .dline {
+        color: #CDCDCD;
+    }
+
+    .arrow {
+        position: absolute;
+        width: 0.75rem;
+        height: 1rem;
+        margin-left: 7.5vw;
+        left: 1.5rem;
+        margin-top: 6.75rem;
+        z-index: 1;
+    }
+
+    .linkl {
+        position: absolute;
+        width: 7px;
+        height: 12px;
+        margin-left:7.5vw;
+        left: 2.9rem;
+        margin-top: 6.5rem;
+        font-weight: 400;
+        font-size: 1.25em;
+        z-index: 1;
+        color:#cdcdcd
+    }
+
+    .submit {
+        position: relative ;
+        width: 35vw;
+        height: 3rem;
+        margin-inline: 7.5vw;
+        margin-top: 9.75rem;
+
+        background: #297DFC;
+        border-radius: 2em;
+        border: 0em;
+        text-align: center;
+        cursor : pointer;
+        color: #ffffff;
+        font-size: 1.125em;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+
+    .urltext {
+        position: flex;
+        margin-inline: 7.5vw;
+        margin-top: 3vh;
+
+        font-weight: 600;
+        font-size: 4vw;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #333333;
+    }
+
+    .github {
+        position: absolute;
+        width: 2em;
+        height: auto;
+    }
+
+    .githubdiv {
+        position: absolute;
+        margin-top: -2.5rem;
+        margin-left: 47.5vw;
+        width: 2em;
+        height: 2em;
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    .infodiv {
+        position: relative;
+        margin-inline: 7.5vw;
+        margin-top: 10vh;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+body {
+    font-size: 16px;
+    width: 100vw;
+}
+
+
+h1 {
+    position: absolute;
+    font-weight: 700;
+    font-size:  3.75em;
+    letter-spacing: -0.02em;
+
+    color: #333333;
+}
+
+.warning {
+    color: #333333;
+    position: relative; margin-left:2rem; margin-top: -1.6rem;
+}
+
+.paragraph {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #333333;
+}
+
+.dline {
+    color: #CDCDCD;
+}
+
+.p-small {
+    font-size: 0.75rem;
+}
+
+.input {
+    position: absolute;
+    background: #FFFFFF;
+    color: #333333;
+    border-radius: 1.25em;
+    border: 0em;
+    text-indent: 1.25em;
+    font-weight: 400;
+    width: 600px;
+    left: 15vw;
+    right: 80px;
+    height: 60px;
+    top: 555px;
+    font-size: 1.25em;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.inputsmall {
+    position: absolute;
+    width: 600px;
+    height: 41px;
+    top: 627px;
+    left: 15vw;
+    font-size: 1em;
+    text-indent: 5.85em;
+    text-align: left;
+    background: #FFFFFF;
+    border-radius: 1.25em;
+    border: 0px;
+    color: #333333;
+}
+
+.inputsmall::placeholder {
+    text-indent: 5.85em;
+    text-align: left;
+    color:#cdcdcd
+}
+
+.arrow {
+    position: absolute;
+    width: 7px;
+    height: 12px;
+    margin-left: 15vw;
+    left:25px;
+    top: 642px;
+    z-index: 1;
+}
+
+.linkl {
+    position: absolute;
+    width: 7px;
+    height: 12px;
+    margin-left: 15vw;
+    left: 43px;
+    top: 638px;
+    z-index: 1;
+    color:#cdcdcd
+}
+
+.submit {
+    position: absolute;
+    width: 150px;
+    height: 47px;
+    left: 15vw;
+    top: 681px;
+    cursor : pointer;
+
+    /* Blue */
+
+    background: #297DFC;
+    border-radius: 1.25em;
+    border: 0em;
+
+    align-items: center;
+    text-align: center;
+
+    /* White */
+    color: #FFFFFF;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.logo {
+    position:absolute;
+    top:100px;
+    left:15vw;
+    cursor : pointer;
+}
+
+.shorten {
+    position: absolute;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #333333;
+    top: 706px;
+    margin-left: 15vw;
+    left: 165px;
+}
+
+.shortenlink {
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #297DFC;
+    top: 682px;
+    margin-left: 15vw;
+    left: 165px;
+
+}
+
+.urltext {
+    position: absolute;
+    left: 15vw;
+    top: 510px;
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    font-weight: 600;
+    font-size: 1.375em;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #333333;
+}
+
+.title {
+    left: 15vw;
+    top: 290px;
+}
+
+.infodiv {
+    margin-left:15vw;
+    margin-top:800px;
+}
+
+.github {
+    position: absolute;
+    width: 40px;
+    height:40px;
+}
+
+.githubdiv {
+    position: absolute;
+    margin-top:790px;
+    right: 15vw;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+}
+
+    html.dark body {
+        background: #333333;
+        color: #f1f1f1;
+    }
+
+    html.dark .urltext {
+        color: #f1f1f1
+    }
+
+    html.dark .shorten {
+        color: #f1f1f1;
+    }
+
+
+
+    html.dark .input {
+        background: #444444;
+        color: #f1f1f1;
+    }
+
+    html.dark .linkl {
+        color: #808080;
+    }
+
+    html.dark .inputsmall {
+        background: #444444;
+        color: #f1f1f1;
+    }
+
+    html.dark .inputsmall::placeholder {
+        color: #808080;
+    }
+
+    html.dark .arrow {
+        stroke: #f1f1f1;
+    }
+
+    html.dark .title {
+        color: #f1f1f1;
+    }
+
+    html.dark .github {
+        fill: #f1f1f1;
+    }
+
+    html.dark h1 {
+        color: #f1f1f1;
+    }
+
+    html.dark .paragraph {
+        color: #f1f1f1;
+    }
+
+    html.dark .dline {
+        color: #808080;
+    }
+
+    html.dark .warning {
+        color: #f1f1f1;
+    }
+
+    html.dark .whitesvg {
+        fill: #f1f1f1;
+    }
+
+    html.dark .bluesvg {
+        fill: #297DFC;
+    }
+
+.soo {
+    color : #f1f1f1;
+}
