@@ -7,7 +7,7 @@
     <meta property="og:description" content="고성능을 지향하는 링크단축 서비스">
     <title>링클 - 정말로 심플한 링크 단축 서비스</title>
     <meta name="color-scheme" content="dark light" />
-    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', path='css/index.css') }}">
     <link rel="icon" href="./assets/images/favicon.ico">
 </head>
 <body>
@@ -17,6 +17,7 @@
     </div>
     {% if result == True %}
         {% if error == True %}
+            {{ error_code }}
             {% if error_code == 1 %}
                 <p class='shortenlink ignore' style='color:#fe5151;'>단축할 링크가 필요해요!</p><p class='shorten ignore'>단축할 링크가 비어있으면 안되요!</p>
             {% elif error_code == 2 %}
@@ -31,7 +32,7 @@
             <p class='shortenlink ignore'>링크 단축 성공!</p><a class='shorten ignore' href="https://linkl.kr/{{message['link']}}">https://linkl.kr/{{message['link']}}로 단축되었어요!</a>
         {% endif %}
     {% endif %}
-    <form method="POST" action="http://127.0.0.1:9000/">
+    <form method="POST" action="http://127.0.0.1:9500/">
         <div>
             <div>
                 <input type="url" id="input" value="https://" name="redirect_link" class="input" placeholder="단축하려는 링크를 입력해주세요.">
@@ -47,7 +48,7 @@
         <input type="submit" class="submit" id="shortenButton" value="링크 줄이기">
     </form>
     <div class="infodiv">
-        <img src="{{ url_for('static', filename='asset/warn.svg') }}" class="ignore icon">
+        <img src="{{ url_for('static', path='asset/warn.svg') }}" class="ignore icon">
         <p class="bold ignore warning">링클은 이 사이트를 사용해 단축하는 링크에 대해 그 어떤 책임도 지지 않습니다.</p>
         <p class="ignore paragraph m-2">국제법으로 위반되는 사이트가 아닌 이상 그 어떤 사이트도 검열하지 않습니다.</p>
     </div>
