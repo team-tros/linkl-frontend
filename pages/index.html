@@ -17,7 +17,6 @@
     </div>
     {% if result == True %}
         {% if error == True %}
-            {{ error_code }}
             {% if error_code == 1 %}
                 <p class='shortenlink ignore' style='color:#fe5151;'>단축할 링크가 필요해요!</p><p class='shorten ignore'>단축할 링크가 비어있으면 안되요!</p>
             {% elif error_code == 2 %}
@@ -29,10 +28,10 @@
             {% endif %}
         {% endif %}
         {% if error == False %}
-            <p class='shortenlink ignore'>링크 단축 성공!</p><a class='shorten ignore' href="https://linkl.kr/{{message['link']}}">https://linkl.kr/{{message['link']}}로 단축되었어요!</a>
+            <p class='shortenlink ignore'>링크 단축 성공!</p><a class='shorten ignore' href="https://lnkl.kr/{{message['link']}}">https://lnkl.kr/{{message['link']}}로 단축되었어요!</a>
         {% endif %}
     {% endif %}
-    <form method="POST" action="http://127.0.0.1:9500/">
+    <form method="POST" action="http://lnkl.kr/">
         <div>
             <div>
                 <input type="url" id="input" value="https://" name="redirect_link" class="input" placeholder="단축하려는 링크를 입력해주세요.">
@@ -40,7 +39,7 @@
             <div>
                 <p class="linkl ignore">linkl.kr/</p>
                 <svg class="arrow ignore" width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="arrow" d="M1 1L6 6L1 11" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="arrow" d="M1 1L6 6L1 11" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
                 <input type="text" id="custom" name="link" class="inputsmall" placeholder="원하는 링크 이름(선택)">
             </div>
