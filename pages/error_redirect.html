@@ -6,7 +6,7 @@
 	<title>404</title>
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/error.css') }}">
 </head>
 <body>
 	<div id="notfound">
@@ -17,7 +17,7 @@
 			</div>
 			<h2>이 링크는 없는 링크이거나 올바르지 않은 링크입니다. 제대로 URL을 입력했는지 확인하세요.</h2>
             <div id="buttons">
-                <button class="w-btn w-btn-indigo" onclick="">돌아가기</button>
+                <button class="w-btn w-btn-indigo" onclick="history.back()">돌아가기</button>
             </div>
 		</div>
 	</div>
