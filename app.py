@@ -1,7 +1,6 @@
 import json
-import requests
-
-from typing import Optional
+import httpx
+from typing import Union
 from fastapi import FastAPI, Request, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -23,7 +22,9 @@ configure_static(app)
 @app.get("/{link}")
 async def iink(request: Request, link: str):
     try:
-        response = requests.get(f"https://api.lnkl.kr/v1/link/get?link={link}")
+        async with httpx.AsyncClient() as client:
+            response = await client.get(f"http://127.0.0.1:7000/v1/link/get?link={link}")
+            print(response.json())
     except:
         return templates.TemplateResponse("error.html", {'request': request}, status_code=500)
     if response.status_code == 500:
@@ -36,20 +37,26 @@ async def iink(request: Request, link: str):
 
 ##################### Index #####################
 @app.post('/')
-async def index(request: Request, redirect_link: str = Form(...), link: Optional[str] = Form(None)):
+async def index(request: Request, redirect_link: str = Form(...), link: Union[str, None] = Form(None)):
+    print(type(link))
+    payload = None
     if link is None:
+        print("None")
         payload = {
-            "link": "",
+            "link": "null",
             "redirect_link": str(redirect_link)}
     else:
+        print("Not None")
         payload = {
             "link": link,
             "redirect_link": str(redirect_link)
         }
     payload_json = json.dumps(payload)
     try:
-        response = requests.post("https://api.lnkl.kr/v1/link/create", data=payload_json)
-    except Exception:
+        async with httpx.AsyncClient() as client:
+            response = await client.post("http://127.0.0.1:7000/v1/link/create", data=payload_json)
+            print(response.json())
+    except:
         return templates.TemplateResponse('error.html', {'request': request}, status_code=500)
     if response.status_code == 500:
         return templates.TemplateResponse('error.html', {'request': request}, status_code=500)

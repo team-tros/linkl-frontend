@@ -28,10 +28,10 @@
             {% endif %}
         {% endif %}
         {% if error == False %}
-            <p class='shortenlink ignore'>링크 단축 성공!</p><a class='shorten ignore' href="https://lnkl.kr/{{message['link']}}">https://lnkl.kr/{{message['link']}}로 단축되었어요!</a>
+            <p class='shortenlink ignore'>링크 단축 성공!</p><a class='shorten ignore' href="https://127.0.0.1:8000/{{message['link']}}">https://lnkl.kr/{{message['link']}}로 단축되었어요!</a>
         {% endif %}
     {% endif %}
-    <form method="POST" action="http://lnkl.kr/">
+    <form method="POST" action="http://127.0.0.1:8000/">
         <div>
             <div>
                 <input type="url" id="input" value="https://" name="redirect_link" class="input" placeholder="단축하려는 링크를 입력해주세요.">
